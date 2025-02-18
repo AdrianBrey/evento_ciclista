@@ -1,5 +1,5 @@
 {
-  "name": "mi-evento-ciclista",
+  "name": "evento_ciclista",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -39,6 +39,6 @@
   "devDependencies": {
     "gh-pages": "^6.3.0"
   },
-  "homepage": "https://TU_USUARIO.github.io/mi-evento-ciclista"
+  "homepage": "https://adrianbrey.github.io/evento_ciclista"
   
 }
