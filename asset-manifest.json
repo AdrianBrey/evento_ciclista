@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/evento_ciclista/static/css/main.7d67ee1f.css",
-    "main.js": "/evento_ciclista/static/js/main.af17fd51.js",
+    "main.css": "/evento_ciclista/static/css/main.ea8072ef.css",
+    "main.js": "/evento_ciclista/static/js/main.9ce5fdc9.js",
     "index.html": "/evento_ciclista/index.html",
-    "main.7d67ee1f.css.map": "/evento_ciclista/static/css/main.7d67ee1f.css.map",
-    "main.af17fd51.js.map": "/evento_ciclista/static/js/main.af17fd51.js.map"
+    "main.ea8072ef.css.map": "/evento_ciclista/static/css/main.ea8072ef.css.map",
+    "main.9ce5fdc9.js.map": "/evento_ciclista/static/js/main.9ce5fdc9.js.map"
   },
   "entrypoints": [
-    "static/css/main.7d67ee1f.css",
-    "static/js/main.af17fd51.js"
+    "static/css/main.ea8072ef.css",
+    "static/js/main.9ce5fdc9.js"
   ]
 }
