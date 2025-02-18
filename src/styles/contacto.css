@@ -1,0 +1,20 @@
+.contacto-container {
+    padding: 20px;
+  }
+  
+  .contacto-container h2 {
+    color: #007bff;
+  }
+  
+  .contacto-container ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .contacto-container li {
+    background: #f8f9fa;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
