@@ -1,0 +1,38 @@
+.inscripcion-container {
+    padding: 20px;
+  }
+  
+  .inscripcion-container h2 {
+    color: #007bff;
+  }
+  
+  .inscripcion-container label {
+    display: block;
+    margin: 10px 0;
+  }
+  
+  .inscripcion-container input,
+  .inscripcion-container select {
+    margin-left: 10px;
+    padding: 5px;
+  }
+  
+  .inscripcion-container button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .inscripcion-container button:hover {
+    background-color: #0056b3;
+  }
+  
+  .participante-form {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+  }

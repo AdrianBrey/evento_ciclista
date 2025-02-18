@@ -6,6 +6,7 @@ import Etapas from "../pages/etapas";
 import Inscripcion from "../pages/inscripcion";
 import Contacto from "../pages/contacto";
 import Layout from "../components/layout";
+import Pago from "../pages/pago";
 
 const AppRouter = () => {
   return (
@@ -15,6 +16,7 @@ const AppRouter = () => {
         <Route path="/etapas" element={<Etapas />} />
         <Route path="/inscripcion" element={<Inscripcion />} />
         <Route path="/contacto" element={<Contacto />} />
+        <Route path="/pago" element={<Pago />} />
       </Routes>
     </Layout>
   );
