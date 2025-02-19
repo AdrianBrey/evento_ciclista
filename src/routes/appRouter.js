@@ -15,8 +15,7 @@ const AppRouter = () => {
         <Route path="inscripcion" element={<Inscripcion />} />
         <Route path="etapas" element={<Etapas />} />
         <Route path="contacto" element={<Contacto />} />
-        <Route path="pago" element={<Pago/>} />
-
+        <Route path="pago" element={<Pago />} />
       </Route>
     </Routes>
   );
