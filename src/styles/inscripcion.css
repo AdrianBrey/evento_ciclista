@@ -1,38 +1,112 @@
 .inscripcion-container {
-    padding: 20px;
-  }
-  
-  .inscripcion-container h2 {
-    color: #007bff;
-  }
-  
-  .inscripcion-container label {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .inscripcion-container input,
-  .inscripcion-container select {
-    margin-left: 10px;
-    padding: 5px;
-  }
-  
-  .inscripcion-container button {
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .inscripcion-container button:hover {
-    background-color: #0056b3;
-  }
-  
-  .participante-form {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-  }
+  width: 80%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Títulos */
+h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Etiquetas de los campos */
+label {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 10px;
+  display: block;
+  font-weight: 500;
+}
+
+/* Inputs de texto y otros campos */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border 0.3s ease-in-out;
+}
+
+/* Hover y focus en inputs */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Campos de tipo checkbox */
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Formulario de cada participante */
+.participante-form {
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Espaciado entre los participantes */
+.participante-form h3 {
+  margin-top: 0;
+}
+
+/* Botón de envío */
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+/* Efecto hover sobre el botón */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Estilo de los checkboxes de las etapas */
+input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #4caf50; /* Cambia el color del checkbox */
+}
+
+/* Espaciado y estilo del contenedor del checkbox */
+div > label {
+  display: block;
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+}

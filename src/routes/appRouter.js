@@ -1,24 +1,24 @@
-// src/routes/AppRouter.js
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/home";
-import Etapas from "../pages/etapas";
-import Inscripcion from "../pages/inscripcion";
-import Contacto from "../pages/contacto";
 import Layout from "../components/layout";
+import Home from "../pages/home";
+import Inscripcion from "../pages/inscripcion";
+import Etapas from "../pages/etapas";
+import Contacto from "../pages/contacto";
 import Pago from "../pages/pago";
 
 const AppRouter = () => {
   return (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/etapas" element={<Etapas />} />
-        <Route path="/inscripcion" element={<Inscripcion />} />
-        <Route path="/contacto" element={<Contacto />} />
-        <Route path="/pago" element={<Pago />} />
-      </Routes>
-    </Layout>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="inscripcion" element={<Inscripcion />} />
+        <Route path="etapas" element={<Etapas />} />
+        <Route path="contacto" element={<Contacto />} />
+        <Route path="pago" element={<Pago/>} />
+
+      </Route>
+    </Routes>
   );
 };
 

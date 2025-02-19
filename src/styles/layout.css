@@ -1,46 +1,68 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 0, 0, 0.863);
+  padding: 15px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
+.header-title {
+  color: white;
+}
+
+.nav-menu {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.nav-menu ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap; /* Evita que los elementos se salgan */
+}
+
+.nav-menu ul li {
+  white-space: nowrap; /* Evita que el texto se divida */
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  transition: color 0.3s;
+  padding: 10px;
+}
+
+.nav-menu ul li a:hover {
+  color: #ffcc00;
+}
+
+.content {
+  padding-top: 87px;
+  flex-grow: 1;
+}
+
 .layout-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .header {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .content-wrapper {
-    display: flex;
-    flex: 1;
-  }
-  
-  .sidebar {
-    width: 200px;
-    background-color: #f4f4f4;
-    padding: 20px;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin: 15px 0;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: #333;
-    font-size: 18px;
-  }
-  
-  .main-content {
-    flex: 1;
-    padding: 20px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+}
+
+
+.footer {
+  width: 100%;
+  background: rgba(170, 170, 170, 0.678);
+  color: rgb(0, 0, 0);
+  text-align: center;
+  padding: 15px 0;
+  position: relative; /* Evita que el footer se superponga */
+}
