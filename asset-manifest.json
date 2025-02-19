@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/evento_ciclista/static/css/main.d3f3a6b5.css",
+    "main.css": "/evento_ciclista/static/css/main.1c3ef487.css",
     "main.js": "/evento_ciclista/static/js/main.be8349e3.js",
     "static/media/isb.jpg": "/evento_ciclista/static/media/isb.04f001d6aad95607569a.jpg",
     "static/media/gadis.png": "/evento_ciclista/static/media/gadis.c514a7cd6d1b01d1a29b.png",
@@ -13,11 +13,11 @@
     "static/media/xunta.png": "/evento_ciclista/static/media/xunta.0355dd81845bab9cb105.png",
     "static/media/decathlon.png": "/evento_ciclista/static/media/decathlon.41f951a108d2c2b795c3.png",
     "index.html": "/evento_ciclista/index.html",
-    "main.d3f3a6b5.css.map": "/evento_ciclista/static/css/main.d3f3a6b5.css.map",
+    "main.1c3ef487.css.map": "/evento_ciclista/static/css/main.1c3ef487.css.map",
     "main.be8349e3.js.map": "/evento_ciclista/static/js/main.be8349e3.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3f3a6b5.css",
+    "static/css/main.1c3ef487.css",
     "static/js/main.be8349e3.js"
   ]
 }
