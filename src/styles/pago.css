@@ -1,0 +1,97 @@
+.pago-container {
+    max-width: 80%;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .pago-contenido {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .izquierda, .derecha {
+
+    width: 48%;
+    
+  }
+  
+  .desglose{
+    max-height: 500px;
+    overflow: scroll;
+  }
+  .resumen {
+    background: #f8f8f8;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .participante-detalle {
+    margin-bottom: 10px;
+  }
+  
+  .detalle-info ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .detalle-etapa {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  .precio {
+    font-weight: bold;
+    margin-right: 10px;
+  }
+  
+  .detalle-hotel, .detalle-total {
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+  }
+  
+  .metodos-pago {
+    display: flex;
+    margin-bottom: 65px;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .metodos-pago button {
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #e0e0e0;
+    transition: 0.3s;
+  }
+  
+  .metodos-pago button.activo {
+    background: #007bff;
+    color: white;
+  }
+  
+  .boton-pagar {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 100%;
+  }
+  
+  .boton-pagar:hover {
+    background: #218838;
+  }
+  
