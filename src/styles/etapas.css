@@ -2,8 +2,9 @@
     padding: 20px;
   }
   
-  .etapas-container h2 {
+  .etapas-container h1 {
     color: #007bff;
+    text-align: center;
   }
   
   .etapas-container ul {
@@ -12,10 +13,28 @@
   }
   
   .etapas-container li {
-    background: #f8f9fa;
+    background: #ebeaeabb;
     padding: 10px;
     margin: 5px 0;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .etapas-container img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .patrocinador p {
+    margin-top: 5px;
+    font-weight: bold;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
   }
   

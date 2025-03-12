@@ -10,6 +10,10 @@ const Home = () => {
        navigate("/inscripcion");
   };
 
+  const normativa = () =>{
+    navigate("/normativa")
+  };
+
   return (
     <div className="home-container">
       <header className="hero">
@@ -20,7 +24,9 @@ const Home = () => {
         </p>
         <Countdown />
         <button onClick={handleSubmit} className="cta-button">¡Inscríbete Ahora!</button>
-        
+        <p></p>
+        <button onClick={normativa} className="cta-button">¡Revisa la normativa del evento!</button>
+
       </header>     
     </div>
   );

@@ -1,0 +1,59 @@
+.normativa-container {
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px auto;
+  }
+  
+  h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  .contenido-normativa {
+    font-family: 'Arial', sans-serif;
+    color: #34495e;
+  }
+  
+  .norma {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .norma h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    color: #2980b9;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2980b9;
+    padding-bottom: 5px;
+  }
+  
+  .norma p {
+    line-height: 1.6;
+    font-size: 15px;
+  }
+  
+  strong {
+    color: #e74c3c;
+  }
+  
+  @media (max-width: 768px) {
+    .normativa-container {
+      width: 90%;
+    }
+    .norma h3 {
+      font-size: 16px;
+    }
+    .norma p {
+      font-size: 14px;
+    }
+  }
+  

@@ -1,16 +1,16 @@
 import React from "react";
 import "../styles/footer.css";
-import gadis from "../assets/images/gadis.png";
-import decathlon from "../assets/images/decathlon.png"
-import telefonica from "../assets/images/telefonica.png"
-import skoda from "../assets/images/skoda.png"
-import citroen from "../assets/images/citroen.jpg"
-import isb from "../assets/images/isb.jpg"
-import xunta from "../assets/images/xunta.png"
-import asturias from "../assets/images/asturias.png"
-import cantabria from "../assets/images/cantabria.png"
-import paisVasco from "../assets/images/paisVasco.png"
-import deportes from "../assets/images/deportes.png"
+import gadis from "../assets/images/logos/gadis.png";
+import decathlon from "../assets/images/logos/decathlon.png"
+import telefonica from "../assets/images/logos/telefonica.png"
+import skoda from "../assets/images/logos/skoda.png"
+import citroen from "../assets/images/logos/citroen.jpg"
+import isb from "../assets/images/logos/isb.jpg"
+import xunta from "../assets/images/logos/xunta.png"
+import asturias from "../assets/images/logos/asturias.png"
+import cantabria from "../assets/images/logos/cantabria.png"
+import paisVasco from "../assets/images/logos/paisVasco.png"
+import deportes from "../assets/images/logos/deportes.png"
 
 
 
