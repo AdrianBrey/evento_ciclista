@@ -33,21 +33,30 @@
     margin-bottom: 10px;
   }
   
+  .participante-resumen p {
+    margin-bottom: 5px;
+  
+  }
+  
+  
   .desglose h4 {
     list-style: none;
     padding: 0;
     margin-top: 10px;
   }
   
-  .detalle-hotel, .detalle-seguro, .detalle-etapa {
+  .detalle-hotel, .detalle-seguro, .detalle-merch , .detalle-etapa {
     display: flex;
     justify-content: space-between;
     padding: 5px 0;
   }
   
   .precio {
+    margin-top: auto;
+    margin-bottom: auto;
     font-weight: bold;
     margin-right: 10px;
+   
   }
   
   .detalle-total {

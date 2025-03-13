@@ -5,6 +5,7 @@ import "../styles/pago.css";
 
 const preciosEtapa = 25;
 const precioSeguro = 25;
+const precioMerch = 75;
 
 const preciosHotel = {
   "Ferrol": 60,
@@ -22,10 +23,11 @@ const Pago = () => {
     return participantes.reduce((total, participante) => {
       const costoEtapas = participante.etapasSeleccionadas.length * preciosEtapa;
       const costoSeguro = participante.federado ? 0 : participante.etapasSeleccionadas.length * precioSeguro;
+      const costoMerch = participante.merch ? precioMerch : 0; // Cambié la lógica para mostrar el precio correcto
       const costoHoteles = Object.entries(participante.hotelesSeleccionados)
         .filter(([_, seleccionado]) => seleccionado)
         .reduce((sum, [etapa]) => sum + preciosHotel[etapa], 0);
-      return total + costoEtapas + costoSeguro + costoHoteles;
+      return total + costoEtapas + costoSeguro + costoHoteles + costoMerch;
     }, 0);
   };
 
@@ -39,51 +41,70 @@ const Pago = () => {
       <div className="pago-contenido">
         <div className="resumen izquierda">
           <div className="desglose">      
-          {participantes.map((participante, index) => (
-            <div key={index} className="participante-resumen">
-              <h3>{participante.nombre}</h3>
-              <p>DNI: {participante.dni}</p>
-              <p>Teléfono: {participante.telefono}</p>
-              <p>Email: {participante.email}</p>
-              <h4>Etapas seleccionadas:</h4>
-              <ul>
-                {participante.etapasSeleccionadas.map((etapa, i) => (
-                  <li key={i} className="detalle-etapa">
-                    <span>{etapa}</span>
-                    <span className="precio">{preciosEtapa}€</span>
-                  </li>
-                ))}
-              </ul>
-              {!participante.federado && (
-                <>
-                  <h4>Seguro obligatorio:</h4>
-                  <ul>
-                    {participante.etapasSeleccionadas.map((etapa, i) => (
-                      <li key={i} className="detalle-seguro">
-                        <span>{etapa} - Seguro</span>
-                        <span className="precio">{precioSeguro}€</span>
-                      </li>
-                    ))}
-                  </ul>
-                </>
-              )}
-              <h4>Hoteles seleccionados:</h4>
-              <ul>
-                {Object.entries(participante.hotelesSeleccionados)
-                  .filter(([_, seleccionado]) => seleccionado)
-                  .map(([etapa], i) => (
-                    <li className="detalle-hotel" key={i}>
+            {participantes.map((participante, index) => (
+              <div key={index} className="participante-resumen">
+                <h3>{participante.nombre}</h3>
+                <p>DNI: {participante.dni}</p>
+                <p>Teléfono: {participante.telefono}</p>
+                <p>Email: {participante.email}</p>
+                <h4>Etapas seleccionadas:</h4>
+                <ul>
+                  {participante.etapasSeleccionadas.map((etapa, i) => (
+                    <li key={i} className="detalle-etapa">
                       <span>{etapa}</span>
-                      <span className="precio">{preciosHotel[etapa]}€</span>
+                      <span className="precio">{preciosEtapa}€</span>
                     </li>
                   ))}
-              </ul>
-            </div>
-          ))}
+                </ul>
+                
+            
+                {!participante.federado && participante.etapasSeleccionadas.length > 0 && (
+                  <>
+                    <h4>Seguro obligatorio:</h4>
+                    <ul>
+                      {participante.etapasSeleccionadas.map((etapa, i) => (
+                        <li key={i} className="detalle-seguro">
+                          <span>{etapa} - Seguro</span>
+                          <span className="precio">{precioSeguro}€</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+           
+                {participante.merch && (
+                  <>
+                    <h4>Pack Mochila + Maillot:</h4>
+                    <ul>
+                      <li className="detalle-merch">
+                        <span>Pack Mochila + Maillot</span>
+                        <span className="precio">{precioMerch}€</span>
+                      </li>
+                    </ul>
+                  </>
+                )}
+                
+                {Object.entries(participante.hotelesSeleccionados).some(([etapa, seleccionado]) => seleccionado && etapa !== 'none') && (
+                  <>
+                    <h4>Hoteles seleccionados:</h4>
+                    <ul>
+                      {Object.entries(participante.hotelesSeleccionados)
+                        .filter(([etapa, seleccionado]) => seleccionado && etapa !== 'none')
+                        .map(([etapa], i) => (
+                          <li className="detalle-hotel" key={i}>
+                            <span>{etapa}</span>
+                            <span className="precio">{preciosHotel[etapa]}€</span>
+                          </li>
+                      ))}
+                    </ul>
+                  </>
+                )}
+              </div>
+            ))}
           </div>
           <h3 className="detalle-total"><span>Total:</span> <span className="precio">{calcularTotal()}€</span></h3>
         </div>
-       <div className="opciones-pago derecha">
+        <div className="opciones-pago derecha">
           <h3>Selecciona el método de pago</h3>
           <div className="metodos-pago">
             <button className={metodoPago === "bizum" ? "activo" : ""} onClick={() => setMetodoPago("bizum")}>Bizum</button>

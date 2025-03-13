@@ -6,6 +6,7 @@ const datosEtapas = [
   { etapa: "Fisterra - Ferrol", hotel: "Ferrol" },
   { etapa: "Ferrol - Ribadeo", hotel: "Ribadeo" },
   { etapa: "Ribadeo - Gijón", hotel: "Gijón" },
+  { etapa: "Gijon-Santander", hotel: "Santander" },
   { etapa: "Santander - San Sebastián", hotel: "none" }
 ];
 
@@ -22,7 +23,7 @@ const Inscripcion = () => {
   const [participantes, setParticipantes] = useState(
     Array.from({ length: numParticipantes }, () => ({
       nombre: "", dni: "", direccion: "", email: "", telefono: "", 
-      etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false
+      etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false, merch: false, tallaMerch: ""
     }))
   );
 
@@ -51,6 +52,16 @@ const Inscripcion = () => {
     setParticipantes(updatedParticipantes);
   };
 
+  const handleMerchChange = (index) => {
+    const updatedParticipantes = [...participantes];
+    updatedParticipantes[index].merch = !updatedParticipantes[index].merch;
+    // Reseteamos la talla cuando se desmarque la opción de merch
+    if (!updatedParticipantes[index].merch) {
+      updatedParticipantes[index].tallaMerch = "";
+    }
+    setParticipantes(updatedParticipantes);
+  };
+
   const handleFederadoChange = (index) => {
     const updatedParticipantes = [...participantes];
     updatedParticipantes[index].federado = !updatedParticipantes[index].federado;
@@ -61,7 +72,7 @@ const Inscripcion = () => {
     const newNum = Number(e.target.value);
     setNumParticipantes(newNum);
     setParticipantes(Array.from({ length: newNum }, (_, i) => participantes[i] || {
-      nombre: "", dni: "", direccion: "", email: "", telefono: "", etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false
+      nombre: "", dni: "", direccion: "", email: "", telefono: "", etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false, merch: false, tallaMerch: ""
     }));
   };
 
@@ -73,8 +84,7 @@ const Inscripcion = () => {
     console.log("Navegando a pago con datos:", { participantes }); // Depuración
     navigate("/pago", { state: { participantes } });
   };
-  
-  
+
   return (
     <div className="inscripcion-container">
       <h2>Formulario de Inscripción</h2>
@@ -102,6 +112,32 @@ const Inscripcion = () => {
             />
             ¿Está federado?
           </label>
+          <label>
+            <input 
+              type="checkbox" 
+              checked={participante.merch} 
+              onChange={() => handleMerchChange(index)} 
+            />
+            ¿Añadir pack mochila + maillot? - 75€
+          </label>
+          {participante.merch && (
+            <div>
+              <label>
+                Talla de Maillot:
+                <select
+                  name="tallaMerch"
+                  value={participante.tallaMerch}
+                  onChange={(e) => handleChange(index, e)}
+                >
+                  <option value="">Seleccionar talla</option>
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+              </label>
+            </div>
+          )}
           <div>
             <h4>Selecciona las etapas a participar y si deseas hotel:</h4>
             {datosEtapas.map((zona, i) => (

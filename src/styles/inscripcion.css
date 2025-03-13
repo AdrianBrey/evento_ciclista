@@ -110,3 +110,9 @@ div > label {
   color: #333;
   margin-bottom: 8px;
 }
+
+.inscripcion-container select {
+  margin-top: 10px;
+  padding: 5px;
+  font-size: 1rem;
+}

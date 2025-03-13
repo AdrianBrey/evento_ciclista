@@ -3,6 +3,12 @@
   margin-top: 20px;
   font-size: 1.5rem;
   color: rgb(0, 0, 0);
+
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0; /* Un poco de espacio arriba y abajo */
+  width: 100%;
+
 }
 
 .countdown {
@@ -10,6 +16,7 @@
   justify-content: center;
   gap: 0px;
   font-weight: bold;
+  padding-right: 13%;
 }
 
 .countdown-item-wrapper {
