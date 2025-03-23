@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/evento_ciclista/static/css/main.100f4d64.css",
-    "main.js": "/evento_ciclista/static/js/main.4d697a41.js",
+    "main.css": "/evento_ciclista/static/css/main.b0417d36.css",
+    "main.js": "/evento_ciclista/static/js/main.a47e913a.js",
     "static/media/isb.jpg": "/evento_ciclista/static/media/isb.04f001d6aad95607569a.jpg",
     "static/media/cartel.jpeg": "/evento_ciclista/static/media/cartel.98f23030bde425b40a76.jpeg",
     "static/media/etapa5.jpeg": "/evento_ciclista/static/media/etapa5.094418cf6ee041c94fea.jpeg",
@@ -27,11 +27,11 @@
     "static/media/decathlon.png": "/evento_ciclista/static/media/decathlon.41f951a108d2c2b795c3.png",
     "static/media/karts.jpeg": "/evento_ciclista/static/media/karts.8d812bd4818e04470a48.jpeg",
     "index.html": "/evento_ciclista/index.html",
-    "main.100f4d64.css.map": "/evento_ciclista/static/css/main.100f4d64.css.map",
-    "main.4d697a41.js.map": "/evento_ciclista/static/js/main.4d697a41.js.map"
+    "main.b0417d36.css.map": "/evento_ciclista/static/css/main.b0417d36.css.map",
+    "main.a47e913a.js.map": "/evento_ciclista/static/js/main.a47e913a.js.map"
   },
   "entrypoints": [
-    "static/css/main.100f4d64.css",
-    "static/js/main.4d697a41.js"
+    "static/css/main.b0417d36.css",
+    "static/js/main.a47e913a.js"
   ]
 }
