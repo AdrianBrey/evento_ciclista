@@ -17,13 +17,24 @@ const preciosHotel = {
   "Santander": 70,
 };
 
+const isValidDNI = (dni) => {
+  const dniRegex = /^[0-9]{8}[A-Za-z]$/;
+  return dniRegex.test(dni);
+};
+
+const isValidEmail = (email) => {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+};
+
 const Inscripcion = () => {
   const navigate = useNavigate();
   const [numParticipantes, setNumParticipantes] = useState(1);
   const [participantes, setParticipantes] = useState(
     Array.from({ length: numParticipantes }, () => ({
       nombre: "", dni: "", direccion: "", email: "", telefono: "", 
-      etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false, merch: false, tallaMerch: ""
+      etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false, merch: false, tallaMerch: "",
+      errors: { dni: "", email: "", nombre: "", etapas: "" } // Campos de error
     }))
   );
 
@@ -55,7 +66,6 @@ const Inscripcion = () => {
   const handleMerchChange = (index) => {
     const updatedParticipantes = [...participantes];
     updatedParticipantes[index].merch = !updatedParticipantes[index].merch;
-    // Reseteamos la talla cuando se desmarque la opción de merch
     if (!updatedParticipantes[index].merch) {
       updatedParticipantes[index].tallaMerch = "";
     }
@@ -72,15 +82,48 @@ const Inscripcion = () => {
     const newNum = Number(e.target.value);
     setNumParticipantes(newNum);
     setParticipantes(Array.from({ length: newNum }, (_, i) => participantes[i] || {
-      nombre: "", dni: "", direccion: "", email: "", telefono: "", etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false, merch: false, tallaMerch: ""
+      nombre: "", dni: "", direccion: "", email: "", telefono: "", etapasSeleccionadas: [], hotelesSeleccionados: {}, federado: false, merch: false, tallaMerch: "",
+      errors: { dni: "", email: "", nombre: "", etapas: "" }
     }));
   };
 
   const handleSubmit = () => {
-    if (participantes.some(p => !p.nombre || !p.dni || p.etapasSeleccionadas.length === 0)) {
-      alert("Completa todos los datos antes de continuar.");
-      return;
+    let formIsValid = true;
+    const updatedParticipantes = [...participantes];
+    
+    // Validaciones
+    updatedParticipantes.forEach((p, index) => {
+      let errors = {};
+      
+      if (!p.nombre) {
+        errors.nombre = "El nombre es obligatorio.";
+        formIsValid = false;
+      }
+      
+      if (!p.dni || !isValidDNI(p.dni)) {
+        errors.dni = "El DNI debe ser válido.";
+        formIsValid = false;
+      }
+      
+      if (!isValidEmail(p.email)) {
+        errors.email = "El correo debe ser válido.";
+        formIsValid = false;
+      }
+      
+      if (p.etapasSeleccionadas.length === 0) {
+        errors.etapas = "Selecciona al menos una etapa.";
+        formIsValid = false;
+      }
+      
+      updatedParticipantes[index].errors = errors;
+    });
+
+    setParticipantes(updatedParticipantes);
+    
+    if (!formIsValid) {
+      return; // Si algún campo es inválido, no enviamos el formulario
     }
+
     console.log("Navegando a pago con datos:", { participantes }); // Depuración
     navigate("/pago", { state: { participantes } });
   };
@@ -99,11 +142,49 @@ const Inscripcion = () => {
       {participantes.map((participante, index) => (
         <div key={index} className="participante-form">
           <h3>Participante {index + 1}</h3>
-          <label>Nombre: <input type="text" name="nombre" value={participante.nombre} onChange={(e) => handleChange(index, e)} /></label>
-          <label>DNI: <input type="text" name="dni" value={participante.dni} onChange={(e) => handleChange(index, e)} /></label>
-          <label>Dirección: <input type="text" name="direccion" value={participante.direccion} onChange={(e) => handleChange(index, e)} /></label>
-          <label>Email: <input type="email" name="email" value={participante.email} onChange={(e) => handleChange(index, e)} /></label>
-          <label>Teléfono: <input type="tel" name="telefono" value={participante.telefono} onChange={(e) => handleChange(index, e)} /></label>
+          <label>Nombre: 
+            <input 
+              type="text" 
+              name="nombre" 
+              value={participante.nombre} 
+              onChange={(e) => handleChange(index, e)} 
+            />
+            {participante.errors.nombre && <span className="error">{participante.errors.nombre}</span>}
+          </label>
+          <label>DNI: 
+            <input 
+              type="text" 
+              name="dni" 
+              value={participante.dni} 
+              onChange={(e) => handleChange(index, e)} 
+            />
+            {participante.errors.dni && <span className="error">{participante.errors.dni}</span>}
+          </label>
+          <label>Dirección: 
+            <input 
+              type="text" 
+              name="direccion" 
+              value={participante.direccion} 
+              onChange={(e) => handleChange(index, e)} 
+            />
+          </label>
+          <label>Email: 
+            <input 
+              type="email" 
+              name="email" 
+              value={participante.email} 
+              onChange={(e) => handleChange(index, e)} 
+            />
+            {participante.errors.email && <span className="error">{participante.errors.email}</span>}
+          </label>
+          <label>Teléfono: 
+            <input 
+              type="tel" 
+              name="telefono" 
+              value={participante.telefono} 
+              onChange={(e) => handleChange(index, e)} 
+            />
+          </label>
           <label>
             <input 
               type="checkbox" 
@@ -162,6 +243,7 @@ const Inscripcion = () => {
                 )}
               </div>
             ))}
+            {participante.errors.etapas && <span className="error">{participante.errors.etapas}</span>}
           </div>
         </div>
       ))}

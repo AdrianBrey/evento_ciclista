@@ -15,6 +15,7 @@ const Layout = () => {
             <li><Link to="/etapas">Etapas</Link></li>
             <li><Link to="/contacto">Contacto</Link></li>
             <li><Link to="/acompanhantes">Acompañantes</Link></li>
+            <li><Link to="/voluntarios">Voluntarios</Link></li>
           </ul>
         </nav>
       </header>
