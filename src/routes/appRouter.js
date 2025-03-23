@@ -7,6 +7,7 @@ import Etapas from "../pages/etapas";
 import Contacto from "../pages/contacto";
 import Pago from "../pages/pago";
 import Normativa from "../pages/normativa";
+import Acompañantes from "../pages/acompanhantes"
 
 const AppRouter = () => {
   return (
@@ -18,6 +19,7 @@ const AppRouter = () => {
         <Route path="contacto" element={<Contacto />} />
         <Route path="pago" element={<Pago />} />
         <Route path="normativa" element={<Normativa />} />
+        <Route path="acompanhantes" element={<Acompañantes/>}/>
       </Route>
     </Routes>
   );

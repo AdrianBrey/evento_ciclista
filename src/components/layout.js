@@ -14,6 +14,7 @@ const Layout = () => {
             <li><Link to="/inscripcion">Inscripción</Link></li>
             <li><Link to="/etapas">Etapas</Link></li>
             <li><Link to="/contacto">Contacto</Link></li>
+            <li><Link to="/acompanhantes">Acompañantes</Link></li>
           </ul>
         </nav>
       </header>
